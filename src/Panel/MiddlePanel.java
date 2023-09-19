@@ -1,17 +1,17 @@
 package Panel;
 
 import UI.CustomButton;
-import UI.Panel;
+import  UI.CustomPanel;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class MiddlePanel extends Panel {
+public class MiddlePanel extends CustomPanel {
 
     public MiddlePanel() {
         Font buttonFont = new Font("Segoe UI", Font.BOLD, 12);
         setLayout(null);
-        this.setBounds(0,166 ,422,45);
+        this.setBounds(0,166 ,424,45);
 
         //MCButton
         Color color = new Color(0xF3F3F3);

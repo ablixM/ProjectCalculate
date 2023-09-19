@@ -63,16 +63,14 @@ public class CustomButton extends JButton implements MouseListener {
     }
     @Override
     public void mouseClicked(MouseEvent e) {
-        // Implement your mouseClicked behavior here
+        backgroundColor = backgroundColor.darker();
     }
     @Override
     public void mousePressed(MouseEvent e) {
         backgroundColor = backgroundColor.brighter();
     }
     @Override
-    public void mouseReleased(MouseEvent e) {
-        backgroundColor = backgroundColor.darker();
-    }
+    public void mouseReleased(MouseEvent e) {}
     @Override
     public void mouseEntered(MouseEvent e) {
         backgroundColor = backgroundColor.darker();

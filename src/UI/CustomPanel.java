@@ -3,8 +3,8 @@ package UI;
 import javax.swing.*;
 import java.awt.*;
 
-public class Panel extends JPanel {
-    public Panel(){
+public class CustomPanel extends JPanel {
+    public CustomPanel(){
         this.setLayout(null);
     };
 

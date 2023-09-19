@@ -4,15 +4,15 @@ import javax.swing.*;
 import java.awt.*;
 
 import UI.Icons;
-import  UI.Panel;
+import  UI.CustomPanel;
 
-public class TopPanel extends Panel {
+public class TopPanel extends CustomPanel {
     Font customFont = new Font("Segoe UI", Font.BOLD, 19);
     Color color = new Color(0xF3F3F3);
 
     public TopPanel(){
         setLayout(null);
-        this.setBounds(0,0,422,166);
+        this.setBounds(0,0,424,166);
 
         //Standard text
         JLabel standard = new JLabel("Standard");
