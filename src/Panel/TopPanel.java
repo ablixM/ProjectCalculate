@@ -2,8 +2,9 @@ package Panel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Objects;
 
-import UI.Icons;
+import UI.CustomIcons;
 import  UI.CustomPanel;
 
 public class TopPanel extends CustomPanel {
@@ -23,16 +24,16 @@ public class TopPanel extends CustomPanel {
 
 
         //History Icon
-        ImageIcon HistoryIcon = new ImageIcon("assets/image/Icon-calculator.jpg");
+        ImageIcon HistoryIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/resources/icons/History.png")));
         Point HistoryPoint = new Point(355,14);
-        Icons Hicon = new Icons(HistoryIcon,HistoryPoint);
-        Hicon.setBounds(355,14,16,16);
-        this.add(Hicon);
+        CustomIcons HistIcon = new   CustomIcons(HistoryIcon,HistoryPoint);
+        HistIcon.setBounds(355,14,16,16);
+        this.add(HistIcon);
 
         //OnTop Icon
         ImageIcon onTopIcon = new ImageIcon("assets/icons/OnTop.png");
         Point onTopPoint = new Point(150,16);
-        Icons onIcon = new Icons(onTopIcon,onTopPoint);
+        CustomIcons onIcon = new CustomIcons(onTopIcon,onTopPoint);
         onIcon.setBounds(150,16,14,15);
         this.add(onIcon);
 

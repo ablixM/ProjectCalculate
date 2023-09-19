@@ -10,18 +10,20 @@ public class MiddlePanel extends CustomPanel {
 
     public MiddlePanel() {
         Font buttonFont = new Font("Segoe UI", Font.BOLD, 12);
+        Color color = new Color(0xF3F3F3);
         setLayout(null);
-        this.setBounds(0,166 ,424,45);
+        this.setBounds(0,166 ,408,45);
 
         //MCButton
-        Color color = new Color(0xF3F3F3);
         CustomButton mc = new CustomButton("MC", new Point(23,11),6,color,buttonFont);
         mc.setBounds(4,4,65,37);
         this.add(mc);
+
         //MRButton
         CustomButton mr = new CustomButton("MR", new Point(23,11),6,color,buttonFont);
         mr.setBounds(71,4 ,65,37);
         this.add(mr);
+
         //M+Button
         CustomButton mPlus = new CustomButton("M+", new Point(23,11),6,color,buttonFont);
         mPlus.setBounds(138,4,65,37);

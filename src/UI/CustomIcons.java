@@ -3,10 +3,10 @@ package UI;
 import javax.swing.*;
 import java.awt.*;
 
-public class Icons extends JPanel {
+public class CustomIcons extends JPanel {
     ImageIcon icon;
     Point setIconLocation;
-    public Icons(ImageIcon icon, Point setIconLocation){
+    public CustomIcons(ImageIcon icon, Point setIconLocation){
         this.icon = icon;
         this.setIconLocation = setIconLocation;
     }
