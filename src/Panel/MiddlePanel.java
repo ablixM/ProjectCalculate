@@ -12,7 +12,7 @@ public class MiddlePanel extends CustomPanel {
         Font buttonFont = new Font("Segoe UI", Font.BOLD, 12);
         Color color = new Color(0xF3F3F3);
         setLayout(null);
-        this.setBounds(0,166 ,408,45);
+        this.setBounds(0,166 ,410,45);
 
         //MCButton
         CustomButton mc = new CustomButton("MC", new Point(23,11),6,color,buttonFont);
@@ -35,13 +35,13 @@ public class MiddlePanel extends CustomPanel {
         this.add(mMinus);
 
         //MSButton
-        CustomButton ms = new CustomButton("M-", new Point(23,11),6,color,buttonFont);
+        CustomButton ms = new CustomButton("MS", new Point(23,11),6,color,buttonFont);
         ms.setBounds(272,4,65,37);
         this.add(ms);
 
 
         //MDrop
-        CustomButton mDrop = new CustomButton("M-", new Point(23,11),6,color,buttonFont);
+        CustomButton mDrop = new CustomButton("M⨈", new Point(23,11),6,color,buttonFont);
         mDrop.setBounds(339,4,65,37);
         this.add(mDrop);
 

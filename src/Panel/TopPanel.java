@@ -13,7 +13,7 @@ public class TopPanel extends CustomPanel {
 
     public TopPanel(){
         setLayout(null);
-        this.setBounds(0,0,424,166);
+        this.setBounds(0,0,410,166);
 
         //Standard text
         JLabel standard = new JLabel("Standard");
@@ -31,7 +31,7 @@ public class TopPanel extends CustomPanel {
         this.add(HistIcon);
 
         //OnTop Icon
-        ImageIcon onTopIcon = new ImageIcon("assets/icons/OnTop.png");
+        ImageIcon onTopIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/resources/icons/OnTop.png")));
         Point onTopPoint = new Point(150,16);
         CustomIcons onIcon = new CustomIcons(onTopIcon,onTopPoint);
         onIcon.setBounds(150,16,14,15);
@@ -40,7 +40,7 @@ public class TopPanel extends CustomPanel {
         //TopField
         JLabel topField = new JLabel("0");
         topField.setFont(customFont);
-        topField.setBounds(360,48,12,27);
+        topField.setBounds(385,48,12,27);
         this.add(topField);
 
         //bottomField
@@ -50,8 +50,16 @@ public class TopPanel extends CustomPanel {
         Font customFontForBottomField = new Font("Segoe UI", Font.BOLD, 45);
         bottomField.setFont(customFontForBottomField);
         bottomField.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-        bottomField.setBounds(47,83,326,48);
+        bottomField.setBounds(0,93,400,48);
         this.add(bottomField);
+
+        //MenuIcon
+        ImageIcon menuIcon = new ImageIcon("resources/icons/Menu.png");
+        Point menuIconPoint = new Point(15,21);
+        CustomIcons menu = new CustomIcons(onTopIcon,onTopPoint);
+        menu.setBounds(15,21,16,10);
+        this.add(menu);
+
 
 
 

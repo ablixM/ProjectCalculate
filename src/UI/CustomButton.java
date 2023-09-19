@@ -49,6 +49,7 @@ public class CustomButton extends JButton implements MouseListener {
         graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
         graphics2D.setPaint(this.backgroundColor);
         graphics2D.fillRoundRect(0, 0, this.getWidth(), this.getHeight(), this.arc, this.arc);
+        graphics2D.setBackground(Color.GRAY);
 
         if (this.hasText) {
             graphics2D.setColor(Color.BLACK);
