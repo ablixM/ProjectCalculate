@@ -1,0 +1,3 @@
+int textWidth = standard.getFontMetrics(standard.getFont()).stringWidth(standard.getText());
+        int textHeight = standard.getFontMetrics(standard.getFont()).getHeight();
+        standard.setPreferredSize(new Dimension(textWidth, textHeight));
