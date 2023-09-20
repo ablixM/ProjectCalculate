@@ -1,7 +1,11 @@
 package Panel;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import UI.CustomIcons;
@@ -11,7 +15,7 @@ public class TopPanel extends CustomPanel {
     Font customFont = new Font("Segoe UI", Font.BOLD, 19);
     Color color = new Color(0xF3F3F3);
 
-    public TopPanel(){
+    public TopPanel() throws IOException {
         setLayout(null);
         this.setBounds(0,0,410,166);
 
@@ -20,11 +24,12 @@ public class TopPanel extends CustomPanel {
         standard.setFont(customFont);
         standard.setBounds(47,9,86,26);
         this.add(standard);
+        final List<Image> icons = new ArrayList<Image>();
 
 
 
         //History Icon
-        ImageIcon HistoryIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/resources/icons/History.png")));
+        ImageIcon HistoryIcon = new ImageIcon(ImageIO.read(Objects.requireNonNull(getClass().getResource("/resources/icons/History.png"))));
         Point HistoryPoint = new Point(355,14);
         CustomIcons HistIcon = new   CustomIcons(HistoryIcon,HistoryPoint);
         HistIcon.setBounds(355,14,16,16);
@@ -56,7 +61,7 @@ public class TopPanel extends CustomPanel {
         //MenuIcon
         ImageIcon menuIcon = new ImageIcon("resources/icons/Menu.png");
         Point menuIconPoint = new Point(15,21);
-        CustomIcons menu = new CustomIcons(onTopIcon,onTopPoint);
+        CustomIcons menu = new CustomIcons(menuIcon,menuIconPoint);
         menu.setBounds(15,21,16,10);
         this.add(menu);
 

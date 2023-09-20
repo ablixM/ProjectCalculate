@@ -5,17 +5,18 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
 import java.awt.image.ImageObserver;
 
 public class CustomButton extends JButton implements MouseListener {
-    private int arc; // The radius of rounded corners
+    private final int arc; // The radius of rounded corners
     private Color backgroundColor; // The background color of the button
-    private boolean hasText; // Indicates if the button has text
+    private final boolean hasText; // Indicates if the button has text
     private String buttonText; // The text to display on the button
-    private Point textStartLocation;
-
     private Icon icon;
     private Point imageStartLocation;
+
 
     Color color = new Color(0xF3F3F3);
     public CustomButton(String buttonText, Point textStartLocation, int arc, Color backgroundColor, Font font) {
@@ -26,7 +27,6 @@ public class CustomButton extends JButton implements MouseListener {
         this.backgroundColor = backgroundColor;
         this.hasText = true;
         this.setFont(font);
-        this.textStartLocation = textStartLocation;
         this.setBorder(new EmptyBorder(textStartLocation.y, textStartLocation.x, 10, 10));
         this.addMouseListener(this);
     }
@@ -44,12 +44,15 @@ public class CustomButton extends JButton implements MouseListener {
     }
 
     public void paintComponent(Graphics graphics) {
+
         Graphics2D graphics2D = (Graphics2D)graphics;
         graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
         graphics2D.setPaint(this.backgroundColor);
+
         graphics2D.fillRoundRect(0, 0, this.getWidth(), this.getHeight(), this.arc, this.arc);
-        graphics2D.setBackground(Color.GRAY);
+
+
 
         if (this.hasText) {
             graphics2D.setColor(Color.BLACK);
