@@ -4,10 +4,12 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import UI.CustomButton;
 import UI.CustomIcons;
 import  UI.CustomPanel;
 
@@ -24,23 +26,30 @@ public class TopPanel extends CustomPanel {
         standard.setFont(customFont);
         standard.setBounds(47,9,86,26);
         this.add(standard);
-        final List<Image> icons = new ArrayList<Image>();
 
+        Point HistoryStartLocation = new Point(5,5);
+        URL HistoryButtonLocation = (Objects.requireNonNull(getClass().getResource("/resources/icons/History.png")));
+        ImageIcon HistoryButtonIcon = new ImageIcon(HistoryButtonLocation);
+        CustomButton HistoryButton = new CustomButton(5,color,HistoryButtonIcon,HistoryStartLocation) ;
 
+        HistoryButton.setBounds(372,15,25,25);
+        this.add(HistoryButton);
 
-        //History Icon
-        ImageIcon HistoryIcon = new ImageIcon(ImageIO.read(Objects.requireNonNull(getClass().getResource("/resources/icons/History.png"))));
-        Point HistoryPoint = new Point(355,14);
-        CustomIcons HistIcon = new   CustomIcons(HistoryIcon,HistoryPoint);
-        HistIcon.setBounds(355,14,16,16);
+       /* //History Icon
+        Point historyIconStartLocation = new Point(0,0);
+        URL historyIconLocation = (Objects.requireNonNull(getClass().getResource("/resources/icons/History.png")));
+        ImageIcon historyIcon = new ImageIcon(historyIconLocation);
+        CustomIcons HistIcon = new   CustomIcons(historyIcon,historyIconStartLocation);
+        HistIcon.setBounds(372,15,16,16);
         this.add(HistIcon);
-
+/*
         //OnTop Icon
-        ImageIcon onTopIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/resources/icons/OnTop.png")));
-        Point onTopPoint = new Point(150,16);
-        CustomIcons onIcon = new CustomIcons(onTopIcon,onTopPoint);
+        Point onTopIconStartLocation = new Point(150,16);
+        URL  onTopIconLocation  = (Objects.requireNonNull(getClass().getResource("/resources/icons/OnTop.png")));
+        ImageIcon onTopIcon = new ImageIcon(onTopIconLocation);
+        CustomIcons onIcon = new CustomIcons(onTopIcon,onTopIconStartLocation);
         onIcon.setBounds(150,16,14,15);
-        this.add(onIcon);
+        this.add(onIcon);*/
 
         //TopField
         JLabel topField = new JLabel("0");
@@ -59,14 +68,12 @@ public class TopPanel extends CustomPanel {
         this.add(bottomField);
 
         //MenuIcon
-        ImageIcon menuIcon = new ImageIcon("resources/icons/Menu.png");
-        Point menuIconPoint = new Point(15,21);
-        CustomIcons menu = new CustomIcons(menuIcon,menuIconPoint);
-        menu.setBounds(15,21,16,10);
-        this.add(menu);
-
-
-
+        Point menuButtonStartLocation = new Point((int)4.5, (int) 7.5);
+        URL  menuButtonLocation  = (Objects.requireNonNull(getClass().getResource("/resources/icons/Menu.png")));
+        ImageIcon menuIcon = new ImageIcon(menuButtonLocation);
+        CustomButton menuButton = new CustomButton(5,color,menuIcon,menuButtonStartLocation) ;
+        menuButton.setBounds(10 ,11,25,25);
+        this.add(menuButton);
 
     }
 

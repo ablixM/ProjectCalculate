@@ -3,8 +3,12 @@ package Panel;
 import UI.CustomButton;
 import UI.CustomPanel;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.net.URI;
+import java.net.URL;
+import java.util.Objects;
 
 public class BottomPanel extends CustomPanel {
     private final int arc;
@@ -18,9 +22,9 @@ public class BottomPanel extends CustomPanel {
     public BottomPanel(){
         Font buttonFont13 = new Font("Segoe UI", Font.PLAIN, 13);
         Font buttonFont15 = new Font("Segue UI", Font.PLAIN, 15);
+        Font buttonFont15Bold = new Font("Segoe UI", Font.BOLD, 15);
         Font buttonFont18 = new Font("Segoe UI", Font.PLAIN, 18);
         Font buttonFont19 = new Font("Segoe UI", Font.PLAIN, 19);
-        Font buttonFont19Bold = new Font("Segoe UI", Font.BOLD, 19);
         Font buttonFont20 = new Font("Segoe UI", Font.PLAIN, 20);
         Font boldButtonFont25 = new Font("Segoe UI", Font.BOLD, 25);
         Color colorF9 = new Color(0xF9F9F9);
@@ -32,7 +36,7 @@ public class BottomPanel extends CustomPanel {
         this.setBounds(0,208,410,418);
 
         //%button
-        CustomButton modulus = new CustomButton("%", new Point(39,18), arc1,colorF9,buttonFont19);
+        CustomButton modulus = new CustomButton("%", new Point(39,18), arc1,colorF9,buttonFont18);
         modulus.setBounds(7,5,96,62);
         this.add(modulus);
 
@@ -47,7 +51,11 @@ public class BottomPanel extends CustomPanel {
         this.add(c);
 
         //xButton
-        CustomButton xButton = new CustomButton("",new Point(40,26), arc1,colorF9,buttonFont15) ;
+        Point xButtonStartLocation = new Point(40,26);
+        URL xButtonLocation = (Objects.requireNonNull(getClass().getResource("/resources/icons/Xbutton.png")));
+        ImageIcon xButtonIcon = new ImageIcon(xButtonLocation);
+        CustomButton xButton = new CustomButton(6,colorF9,xButtonIcon,xButtonStartLocation) ;
+        xButton.setBorder(null);
         xButton.setBounds(307,5,96,62);
         this.add(xButton);
 
@@ -132,7 +140,7 @@ public class BottomPanel extends CustomPanel {
         this.add(addition);
 
         //negate
-        CustomButton negate = new CustomButton("+/-",new Point(36,17), arc1,colorFF,buttonFont15);
+        CustomButton negate = new CustomButton("+/-",new Point(37,19), arc1,colorFF,buttonFont15Bold);
         negate.setBounds(7,335,96,62);
         this.add(negate);
 

@@ -20,7 +20,7 @@ public class MainFrame extends JFrame {
     MainFrame() throws IOException {
         super("Calculator");
         setLayout(null);
-        this.setSize(new Dimension(426 ,650));
+        this.setSize(new Dimension(422 ,648));
 
         //getClass().getResource("assets/icons/Icon-calculator32.png");
         //getClass().getResource("assets/icons/Icon-calculator.png");
@@ -44,7 +44,6 @@ public class MainFrame extends JFrame {
 
 
         setLocationRelativeTo(null);
-        setLocationByPlatform(true);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
